@@ -44,18 +44,18 @@ public class StateManager
         {
             attackStateTime += Time.deltaTime;
         }
-
+        
+        if (state != StateEnum.Idle && inputController.IsIdle && (attackStateTime > 0.3f || attackStateTime == 0))
+        {
+            ChangeState(StateEnum.Idle);
+        } else if (inputController.MoveDirection != Vector3.zero && (state != StateEnum.Attacking || (attackStateTime > 0.3f || attackStateTime == 0)))
+        {
+            ChangeState(StateEnum.Moving);
+        }
         if(inputController.IsPunching || inputController.IsKicking)
         {
             ChangeState(StateEnum.Attacking);
             attackStateTime = 0;
-        }
-        if (state != StateEnum.Idle && inputController.IsIdle && (attackStateTime > 0.3f || attackStateTime == 0))
-        {
-            ChangeState(StateEnum.Idle);
-        } else if (inputController.MoveDirection != Vector3.zero && state != StateEnum.Attacking && (attackStateTime > 0.3f || attackStateTime == 0))
-        {
-            ChangeState(StateEnum.Moving);
         }
 
         States[state].Update();

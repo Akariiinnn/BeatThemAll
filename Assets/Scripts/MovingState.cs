@@ -8,13 +8,14 @@ public class MovingState : BaseState
     private readonly Animator animator;
     private readonly GameObject modelTransform;
     private readonly float baseSpeed;
+    public float speed;
 
     public MovingState(GameObject target, IInputController controller, PlayerData data, Animator animator,
         GameObject modelTransform)
     {
         this.controller = controller;
         this.target = target;
-        this.data = data;
+        this.speed = data.Speed;
         this.animator = animator;
         this.modelTransform = modelTransform;
         baseSpeed = data.Speed;
@@ -30,16 +31,16 @@ public class MovingState : BaseState
         animator.SetBool("idletomove", true);
         if (controller.IsRunning)
         {
-            data.Speed = baseSpeed*2;
+            speed = baseSpeed*2;
             animator.SetBool("movetorun", true);
         } else
         {
-            data.Speed = baseSpeed;
+            speed = baseSpeed;
             animator.SetBool("movetorun", false);
         }
         RotateCharacter(controller.MoveDirection);
         target.transform.position +=
-            target.transform.rotation * controller.MoveDirection * (data.Speed * Time.deltaTime);
+            target.transform.rotation * controller.MoveDirection * (speed * Time.deltaTime);
     }
 
     public override void Exit()
