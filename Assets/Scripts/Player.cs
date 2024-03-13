@@ -5,6 +5,8 @@ using Zenject;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerData _data;
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject modelTransform;
 
     private StateManager stateManager;
 
@@ -14,11 +16,7 @@ public class Player : MonoBehaviour
     private void Construct(IInputController controller)
     {
         inputController = controller;
-        stateManager = new StateManager(gameObject, inputController, _data);
-    }
-
-    private void Start()
-    {
+        stateManager = new StateManager(gameObject, inputController, _data, animator, modelTransform);
     }
 
     void Update()
