@@ -29,7 +29,7 @@ public class Ennemy : MonoBehaviour
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
             // Si le joueur est suffisamment proche, ajuster la direction vers le joueur
-            if (distanceToPlayer < data.MaxOffset)
+            if (distanceToPlayer < data.MaxOffset && distanceToPlayer > 0.5f)
             {
                 direction = (player.transform.position - transform.position).normalized;
             }
