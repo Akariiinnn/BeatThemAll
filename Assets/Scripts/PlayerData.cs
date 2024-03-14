@@ -9,6 +9,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] private float speed = 10;
     [SerializeField] private Vector3 direction = Vector3.forward;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private float jumpForce = 10;
     
     public float Speed
     {
@@ -26,5 +27,11 @@ public class PlayerData : ScriptableObject
     {
         get => prefab;
         set => prefab = value;
+    }
+    
+    public float JumpForce
+    {
+        get => jumpForce;
+        set => jumpForce = value;
     }
 }

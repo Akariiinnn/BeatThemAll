@@ -6,18 +6,19 @@ using UnityEngine;
 public class Ennemy : MonoBehaviour
 {
     [SerializeField] private AudioManager audioManager;
-    [SerializeField] private float maxOffset = 5;
-    [SerializeField] private float speed = 5;
-    [SerializeField] private int health = 25;
+    [SerializeField] private Enemies data;
     private Vector3 direction = Vector3.left;
     private Vector3 spawnPosition;
 
     public event System.Action<Ennemy> OnHit;
 
+    private int health;
+
     void Start()
     {
         // Enregistrer la position de spawn de l'ennemi
         spawnPosition = transform.position;
+        health = data.Health;
     }
 
     private void Update()
@@ -29,7 +30,7 @@ public class Ennemy : MonoBehaviour
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
             // Si le joueur est suffisamment proche, ajuster la direction vers le joueur
-            if (distanceToPlayer < maxOffset)
+            if (distanceToPlayer < data.MaxOffset && distanceToPlayer > 0.5f)
             {
                 direction = (player.transform.position - transform.position).normalized;
             }
@@ -44,7 +45,7 @@ public class Ennemy : MonoBehaviour
         }
 
         // Déplacer l'ennemi dans la direction actuelle
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction * data.Speed * Time.deltaTime;
     }
 
    private void OnCollisionEnter(Collision collision)

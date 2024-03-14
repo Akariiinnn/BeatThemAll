@@ -28,6 +28,7 @@ public class InputController : IInputController, ITickable
     public bool IsPunching { get; private set; }
     public bool IsKicking { get; private set; }
     public bool IsJumping { get; private set; }
+    public bool IsGrounded { get; private set; }
     public Vector3 MoveDirection { get; private set; }
 
     public void Tick()
@@ -38,6 +39,8 @@ public class InputController : IInputController, ITickable
         IsKicking = Input.GetKeyDown(KeyCode.R);
         IsPunching = Input.GetKeyDown(KeyCode.F);
         IsJumping = Input.GetKeyDown(KeyCode.Space);
+        IsGrounded = true;
+        
         if (Input.GetKey(KeyCode.A))
         {
             moveDirection.x = -1;
