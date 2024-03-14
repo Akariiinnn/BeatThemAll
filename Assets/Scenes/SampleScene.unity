@@ -201,7 +201,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!4 &313404725 stripped
+=======
+--- !u!1 &313404724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313404725}
+  - component: {fileID: 313404726}
+  m_Layer: 0
+  m_Name: GamePlayer
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &313404725
+>>>>>>> Stashed changes
 Transform:
   m_CorrespondingSourceObject: {fileID: 1193919351550002199, guid: 95fa98f3943b81f45a477b165cc528ec,
     type: 3}
