@@ -7,10 +7,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 10;
+    [SerializeField] private float speed = 35;
     [SerializeField] private Vector3 direction = Vector3.forward;
     [SerializeField] private float lifeTime = 2f;
-    [SerializeField] private float damage = 10;
+    [SerializeField] private int damage = 10;
     [SerializeField] private Rigidbody body;
     
     private float currentLifetime = 0;
@@ -39,5 +39,30 @@ public class Projectile : MonoBehaviour
         {
             onHit?.Invoke();
         }
+    }
+    
+    public void SetDirection(Vector3 direction)
+    {
+        this.direction = direction;
+    }
+    
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+    
+    public void SetLifeTime(float lifeTime)
+    {
+        this.lifeTime = lifeTime;
+    }
+    
+    public void SetDamage(int damage)
+    {
+        this.damage = damage;
+    }
+
+    public int Damage
+    {
+        get => this.damage;
     }
 }

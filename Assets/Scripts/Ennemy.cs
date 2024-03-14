@@ -7,6 +7,7 @@ public class Ennemy : MonoBehaviour
 {
     [SerializeField] private float maxOffset = 5;
     [SerializeField] private float speed = 5;
+    [SerializeField] private int health = 25;
     private Vector3 direction = Vector3.left;
     private Vector3 spawnPosition;
 
@@ -45,14 +46,25 @@ public class Ennemy : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
+<<<<<<< Updated upstream
     /*private void OnCollisionEnter(Collision collision)
+=======
+   private void OnCollisionEnter(Collision collision)
+>>>>>>> Stashed changes
     {
         if (collision.gameObject.GetComponent<Projectile>() != null)
         {
             OnHit?.Invoke(this);
-            Destroy(gameObject);
+            if (health > 0)
+            {
+                health -= collision.gameObject.GetComponent<Projectile>().Damage;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             Destroy(collision.gameObject);
         }
-    }*/
+    }
 }
 

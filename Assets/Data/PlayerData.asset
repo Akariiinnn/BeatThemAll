@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   direction: {x: 0, y: 0, z: 1}
-  prefab: {fileID: 0}
+  prefab: {fileID: 8750662419739028270, guid: ec4a2b61df56c7144a23c36e220d17e1, type: 3}
