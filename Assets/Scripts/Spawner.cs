@@ -10,10 +10,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float spawnRadius = 5f; // Rayon autour du spawner où les ennemis peuvent apparaître
 
     private int spawnCount;
+    private bool hasBeenActivated;
 
     void Start()
     {
-        SpawnEnemies();
+        hasBeenActivated = false;
     }
 
     private void SpawnEnemies()
@@ -36,6 +37,16 @@ public class Spawner : MonoBehaviour
     private void OnEnemyHit(Ennemy enemy)
     {
         Debug.Log(enemy);
+    }
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Player>() != null && !hasBeenActivated)
+        {
+            hasBeenActivated = true;
+            SpawnEnemies();
+        }
     }
 
     public void EnemyDestroyed()
