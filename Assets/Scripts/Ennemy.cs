@@ -11,6 +11,7 @@ public class Ennemy : MonoBehaviour
     private Vector3 spawnPosition;
 
     public event System.Action<Ennemy> OnHit;
+    public event System.Action<Ennemy> OnDeath;
 
     private int health;
 
@@ -59,6 +60,7 @@ public class Ennemy : MonoBehaviour
             }
             else
             {
+                OnDeath?.Invoke(this);
                 Destroy(gameObject);
             }
             Destroy(collision.gameObject);
