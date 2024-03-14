@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Ennemy : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Enemies data;
     private Vector3 direction = Vector3.left;
     private Vector3 spawnPosition;
