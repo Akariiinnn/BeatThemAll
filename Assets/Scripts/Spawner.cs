@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
         {
             // Calculer une position aléatoire à l'intérieur du rayon autour du spawner
             Vector3 spawnPosition = transform.position + UnityEngine.Random.insideUnitSphere * spawnRadius;
-            spawnPosition.y = 0;
+            spawnPosition.y = 1;
             GameObject selectedPrefab = entityPrefabs[i];
             Debug.Log("Spawn Position: " + spawnPosition);
             var instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
