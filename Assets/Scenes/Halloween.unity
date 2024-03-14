@@ -2286,6 +2286,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b3e6db10d22f504dbc606110b2cb5e7, type: 3}
+--- !u!4 &453657755 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1246729893758631924, guid: 95fa98f3943b81f45a477b165cc528ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 772818028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &454625370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b5feab0a6edb21c408a77d0c521a08c8,
@@ -4185,6 +4191,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1532600598306764437, guid: 95fa98f3943b81f45a477b165cc528ec,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723621040270717013, guid: 95fa98f3943b81f45a477b165cc528ec,
+        type: 3}
+      propertyPath: shootPosition
+      value: 
+      objectReference: {fileID: 453657755}
     m_RemovedComponents:
     - {fileID: 5030044133701702888, guid: 95fa98f3943b81f45a477b165cc528ec, type: 3}
     m_RemovedGameObjects: []
@@ -6313,7 +6329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 152511639}
-  cameraPos: {x: 1, y: 2, z: -2}
+  cameraPos: {x: 1, y: 3, z: -5}
 --- !u!1001 &1297894572
 PrefabInstance:
   m_ObjectHideFlags: 0
