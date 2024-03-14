@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Ennemy : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private float maxOffset = 5;
     [SerializeField] private float speed = 5;
     [SerializeField] private int health = 25;

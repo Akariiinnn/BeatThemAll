@@ -13,13 +13,13 @@ public class StateManager
     public Animator animator { get; private set; }
 
     public StateManager(GameObject target, IInputController inputController, PlayerData data, 
-        Animator animator, GameObject modelTransform, Transform shootPosition)
+        Animator animator, GameObject modelTransform, Transform shootPosition, AudioManager audioManager)
     {
         this.animator = animator;
         this.inputController = inputController;
         States.Add(StateEnum.Idle, new IdleState(inputController, animator));
         States.Add(StateEnum.Moving, new MovingState(target, inputController, data, animator, modelTransform));
-        States.Add(StateEnum.Attacking, new AttackState(inputController, animator, modelTransform, data, shootPosition));
+        States.Add(StateEnum.Attacking, new AttackState(inputController, animator, modelTransform, data, shootPosition, audioManager));
     }
     
     public void ChangeState(StateEnum newState)
