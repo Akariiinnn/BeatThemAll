@@ -46,11 +46,7 @@ public class Ennemy : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-<<<<<<< Updated upstream
-    /*private void OnCollisionEnter(Collision collision)
-=======
    private void OnCollisionEnter(Collision collision)
->>>>>>> Stashed changes
     {
         if (collision.gameObject.GetComponent<Projectile>() != null)
         {
