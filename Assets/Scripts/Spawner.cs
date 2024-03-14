@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject[] entityPrefabs;
     [SerializeField] private int maxSpawnCount = 5;
     [SerializeField] private float spawnRadius = 5f; // Rayon autour du spawner où les ennemis peuvent apparaître
+    [SerializeField] private ScoreUI scoreUI;
 
     private int spawnCount;
     private bool hasBeenActivated;
@@ -29,6 +30,7 @@ public class Spawner : MonoBehaviour
             var instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
             
             instance.GetComponent<Ennemy>().OnHit += OnEnemyHit;
+            instance.GetComponent<Ennemy>().OnDeath += OnEnemyDeath;
 
             spawnCount++;
         }
@@ -37,6 +39,11 @@ public class Spawner : MonoBehaviour
     private void OnEnemyHit(Ennemy enemy)
     {
         Debug.Log(enemy);
+    }
+
+    private void OnEnemyDeath(Ennemy enemy)
+    {
+        scoreUI.AddScorePoint();
     }
     
 
