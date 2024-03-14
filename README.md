@@ -1,6 +1,6 @@
-# Beat Them All
+# Attack of the parkinson phantoms
 
-Un jeu conçu par :
-- Quentin ROBERT
-- Rémi PÉDEFLOUS
-- Kenny YU TSUEN
+**Un Unity jeu conçu par :**
+- **Quentin ROBERT**
+- **Rémi PÉDEFLOUS**
+- **Kenny YU TSUEN**
