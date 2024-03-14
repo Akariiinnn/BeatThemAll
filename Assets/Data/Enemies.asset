@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   maxOffset: 5
-  health: 25
+  health: 15
